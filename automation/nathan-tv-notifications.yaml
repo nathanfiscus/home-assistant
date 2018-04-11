@@ -9,7 +9,7 @@
     data:
       message: "Nathan has arrived at work."
       data: 
-        icon: "/config/nate.jpg"
+        icon: "/config/assets/nate.jpg"
         
 - alias: Living Room TV Notification - Nathan - Work Leave
   trigger:
@@ -22,7 +22,7 @@
     data:
       message: "Nathan has left work."
       data: 
-        icon: "/config/nate.jpg"
+        icon: "/config/assets/nate.jpg"
         
 - alias: Living Room TV Notification - Nathan - Home Leave
   trigger:
@@ -35,7 +35,7 @@
     data:
       message: "Nathan has left home."
       data: 
-        icon: "/config/nate.jpg"
+        icon: "/config/assets/nate.jpg"
         
 - alias: Living Room TV Notification - Nathan - Home Arrive
   trigger:
@@ -48,4 +48,4 @@
     data:
       message: "Nathan has arrived home."
       data: 
-        icon: "/config/nate.jpg"
+        icon: "/config/assets/nate.jpg"

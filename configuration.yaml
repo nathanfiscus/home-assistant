@@ -107,14 +107,12 @@ cover:
 media_player:
   - platform: roku
   - platform: webostv
-    host: 192.168.0.26
+    host: 10.0.0.50
     name: Living Room TV  
     timeout: 5
     filename: webostv.conf
     customize:
       sources:
-        - livetv
-        - youtube
         - vudu
         - netflix
         - hulu
@@ -125,15 +123,13 @@ media_player:
     filename: basement-webostv.conf
     customize:
       sources:
-        - livetv
-        - youtube
         - vudu
         - netflix
         - hulu
 
 notify:
   - platform: webostv
-    host: 192.168.0.26
+    host: 10.0.0.50
     name: livingroom_tv
     filename: webostv-notify.conf
   - platform: webostv
