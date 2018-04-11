@@ -1,0 +1,8 @@
+zone.home:
+  latitude: 41.301675
+  longitude: -112.046918
+device_tracker.35d6cd65fb3e483f95dcc8b7e8e76d7b:
+  friendly_name: Nathan
+  icon: mdi:account
+weather.main_floor:
+  friendly_name: Weather

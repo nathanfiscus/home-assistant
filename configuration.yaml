@@ -1,0 +1,154 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret lat
+  longitude: !secret lng
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: !secret elevation
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: !secret timezone
+  # Customization file
+  customize: !include customize.yaml
+
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+http:
+  # Secrets are defined in the file secrets.yaml
+  api_password: !secret http_password
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  base_url: !secret base_url
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+# Weather prediction
+sensor:
+  - platform: fastdotcom 
+  - platform: darksky
+    api_key: !secret darksky_api_key
+    update_interval: "00:03:30"
+    monitored_conditions:
+      - summary
+      - precip_type
+      - precip_intensity
+      - precip_probability
+      - precip_accumulation
+      - temperature
+      - apparent_temperature
+      - dew_point
+      - wind_speed
+      - wind_bearing
+      - cloud_cover
+      - humidity
+      - pressure
+      - visibility
+      - ozone
+      - minutely_summary
+      - hourly_summary
+      - daily_summary
+      - temperature_max
+      - temperature_min
+      - apparent_temperature_max
+      - apparent_temperature_min
+      - precip_intensity_max
+      - uv_index
+
+# Text to speech
+tts:
+  - platform: google
+#############################################################
+#############################################################
+#                         MY EDITS
+#############################################################
+#############################################################
+ecobee:
+  api_key: !secret ecobee_api_key
+  
+cover:
+  - platform: myq
+    username: !secret myq_user
+    password: !secret myq_password
+    type: liftmaster
+
+media_player:
+  - platform: roku
+  - platform: webostv
+    host: 192.168.0.26
+    name: Living Room TV  
+    timeout: 5
+    filename: webostv.conf
+    customize:
+      sources:
+        - livetv
+        - youtube
+        - vudu
+        - netflix
+        - hulu
+  - platform: webostv
+    host: 192.168.0.22
+    name: Basement TV  
+    timeout: 5
+    filename: basement-webostv.conf
+    customize:
+      sources:
+        - livetv
+        - youtube
+        - vudu
+        - netflix
+        - hulu
+
+notify:
+  - platform: webostv
+    host: 192.168.0.26
+    name: livingroom_tv
+    filename: webostv-notify.conf
+  - platform: webostv
+    host: 192.168.0.22
+    name: basement_tv
+    filename: basement-webostv-notify.conf
+    
+device_tracker:
+  - platform: geofency
+  
+zwave:
+  usb_path: /dev/ttyACM0
+
+#############################################################
+############################################################
+group: !include groups.yaml
+automation: !include_dir_merge_list automation
+script: !include scripts.yaml
