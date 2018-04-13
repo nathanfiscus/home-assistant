@@ -6,6 +6,6 @@ install:
 script:
   - hass -c . --script check_config
 before_install:
-  - mv tests/travis_fullchain.pem /etc/ssl/fullchain.pem
-  - mv tests/travis_privkey.pem /etc/ssl/privkey.pem
+  - mv tests/travis_fullchain.pem travis_fullchain.pem
+  - mv tests/travis_privkey.pem travis_privkey.pem
   - mv tests/travis_secrets.yaml secrets.yaml
