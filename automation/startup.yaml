@@ -1,0 +1,16 @@
+- alias: Startup Notifications
+  trigger:
+    platform: homeassistant
+    # Event can also be 'shutdown'
+    event: start
+  action:
+    - service: notify.basement_tv
+      data:
+        message: "Home Assistant is Running"
+        data: 
+        icon: "/config/assets/homeassistant.png"
+    - service: notify.livingroom_tv
+      data:
+        message: "Home Assistant is Running"
+        data: 
+        icon: "/config/assets/homeassistant.png"

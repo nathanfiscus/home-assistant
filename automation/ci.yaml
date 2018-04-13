@@ -7,8 +7,12 @@
     - service: notify.basement_tv
       data:
         message: "Home Assistant Configuration is Updating..."
+        data: 
+        icon: "/config/assets/homeassistant.png"
     - service: notify.livingroom_tv
       data:
         message: "Home Assistant Configuration is Updating..."
+        data: 
+        icon: "/config/assets/homeassistant.png"
     - service: shell_command.updateconfig
     - service: homeassistant.restart
