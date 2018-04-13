@@ -118,6 +118,7 @@ media_player:
         - vudu
         - netflix
         - hulu
+        - amazon
   - platform: webostv
     host: 10.0.0.56
     name: Basement TV  
@@ -128,6 +129,7 @@ media_player:
         - vudu
         - netflix
         - hulu
+        - amazon
 
 notify:
   - platform: webostv
