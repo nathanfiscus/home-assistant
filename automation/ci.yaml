@@ -4,5 +4,11 @@
       entity_id: sensor.nathanfiscushomeassistant_last_build_state
       to: 'passed'
   action:
+    - service: notify.basement_tv
+      data:
+        message: "Home Assistant Configuration is Updating..."
+    - service: notify.livingroom_tv
+      data:
+        message: "Home Assistant Configuration is Updating..."
     - service: shell_command.updateconfig
     - service: homeassistant.restart
