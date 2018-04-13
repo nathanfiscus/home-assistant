@@ -117,7 +117,7 @@ media_player:
         - netflix
         - hulu
   - platform: webostv
-    host: 192.168.0.22
+    host: 10.0.0.56
     name: Basement TV  
     timeout: 5
     filename: basement-webostv.conf
@@ -133,7 +133,7 @@ notify:
     name: livingroom_tv
     filename: webostv-notify.conf
   - platform: webostv
-    host: 192.168.0.22
+    host: 10.0.0.56
     name: basement_tv
     filename: basement-webostv-notify.conf
     
