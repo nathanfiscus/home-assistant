@@ -1,0 +1,8 @@
+- alias: Continuous Integration
+  trigger:
+    - platform: state
+      entity_id: sensor.tribunexhome_assistant_last_build_state
+      to: 'passed'
+  action:
+    - service: shell_command.updateconfig
+    - service: homeassistant.restart
