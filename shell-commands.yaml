@@ -1,1 +1,1 @@
-update-config: git pull
+updateconfig: git pull
