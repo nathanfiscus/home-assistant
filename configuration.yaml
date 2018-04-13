@@ -86,6 +86,8 @@ sensor:
       - apparent_temperature_min
       - precip_intensity_max
       - uv_index
+  - platform: travisci
+    api_key: !secret github_key
 
 # Text to speech
 tts:
@@ -148,3 +150,4 @@ zwave:
 group: !include groups.yaml
 automation: !include_dir_merge_list automation
 script: !include scripts.yaml
+shell_command: !include shell-commands.yaml
