@@ -8,9 +8,9 @@
       data:
         message: "Home Assistant is Running"
         data: 
-        icon: "/config/assets/homeassistant.png"
+        icon: "/config/assets/ha.jpg"
     - service: notify.livingroom_tv
       data:
         message: "Home Assistant is Running"
         data: 
-        icon: "/config/assets/homeassistant.png"
+        icon: "/config/assets/ha.jpg"
