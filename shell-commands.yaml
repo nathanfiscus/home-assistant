@@ -1,1 +1,1 @@
-updateconfig: cd /config && git pull
+updateconfig: bash cd /config && git pull
