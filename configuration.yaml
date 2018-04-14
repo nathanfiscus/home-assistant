@@ -92,11 +92,9 @@ sensor:
 # Text to speech
 tts:
   - platform: google
-#############################################################
-#############################################################
-#                         MY EDITS
-#############################################################
-#############################################################
+
+ios:
+
 ecobee:
   api_key: !secret ecobee_api_key
   
@@ -147,8 +145,6 @@ device_tracker:
 zwave:
   usb_path: /dev/ttyACM0
 
-#############################################################
-############################################################
 group: !include groups.yaml
 automation: !include_dir_merge_list automation
 script: !include scripts.yaml
