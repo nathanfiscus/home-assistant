@@ -8,11 +8,11 @@
       data:
         message: "Home Assistant Configuration is Updating..."
         data: 
-        icon: "/config/assets/ha.jpg"
+          icon: "/config/assets/ha.jpg"
     - service: notify.livingroom_tv
       data:
         message: "Home Assistant Configuration is Updating..."
         data: 
-        icon: "/config/assets/ha.jpg"
+          icon: "/config/assets/ha.jpg"
     - service: shell_command.updateconfig
     - service: homeassistant.restart
