@@ -1,1 +1,1 @@
-updateconfig: bash cd /config && git pull
+updateconfig: ssh root@10.0.0.48 "cd /config && git pull"
