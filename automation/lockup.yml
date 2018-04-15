@@ -1,4 +1,4 @@
-- alias: Lockup
+- alias: Goodnight
   trigger:
     - platform: event
       event_type: GOODNIGHT_HA
