@@ -145,6 +145,7 @@ device_tracker:
 zwave:
   usb_path: /dev/ttyACM0
 
+panel_iframe: !include iframe_panels.yaml
 group: !include groups.yaml
 automation: !include_dir_merge_list automation
 script: !include scripts.yaml
