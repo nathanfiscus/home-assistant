@@ -1,0 +1,4 @@
+unificontroller:
+  title: UniFI Controller
+  icon: mdi:access-point-network
+  url: https://fiscus.duckdns.org:8443/manage
