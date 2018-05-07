@@ -1,0 +1,37 @@
+- alias: Climate - Open Windows
+  trigger:
+    - platform: template
+      value_template: "{% states.sensor.dark_sky_temperature.state | round(0) - sensor.main_floor_temperature | round(0) %}"
+      below: 0
+      for:
+        minutes: 5
+  action:
+    - service: notify.livingroom_tv
+      data:
+        message: "Its now cool enough to open the windows."
+        data: 
+          icon: "/config/assets/ha.jpg"
+    - service: notify.basement_tv
+      data:
+        message: "Its now cool enough to open the windows."
+        data: 
+          icon: "/config/assets/ha.jpg"
+
+- alias: Climate - Close Windows
+  trigger:
+    - platform: template
+      value_template: "{% states.sensor.dark_sky_temperature.state | round(0) - sensor.main_floor_temperature | round(0) %}"
+      above: 0
+      for:
+        minutes: 5
+  action:
+    - service: notify.livingroom_tv
+      data:
+        message: "Its now too warm to have the windows open."
+        data: 
+          icon: "/config/assets/ha.jpg"
+    - service: notify.basement_tv
+      data:
+        message: "Its now too warm to have the windows open."
+        data: 
+          icon: "/config/assets/ha.jpg"
