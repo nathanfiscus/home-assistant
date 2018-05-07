@@ -1,6 +1,7 @@
 - alias: Climate - Open Windows
   trigger:
     - platform: template
+      entity_id: sensor.dark_sky_temperature
       value_template: "{% if states.sensor.dark_sky_temperature.state | round(0) - states.sensor.main_floor_temperature | round(0) < 0 %}true{% endif %}"
       for:
         minutes: 5
@@ -19,6 +20,7 @@
 - alias: Climate - Close Windows
   trigger:
     - platform: template
+      entity_id: sensor.dark_sky_temperature
       value_template: "{% if states.sensor.dark_sky_temperature.state | round(0) - states.sensor.main_floor_temperature | round(0) > 0 %}true{% endif %}"
       for:
         minutes: 5
